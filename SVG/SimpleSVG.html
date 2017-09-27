@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <!--Use of SVG Using Events-->
+    <svg>
+        <circle id="myCircle" cx="50" cy="50" r="50" fill="green" onmouseover="Red(evt)" onmouseout="Green(evt)" ></circle>
+    </svg>
+    <!--Multiple SVG Functionality--> 
+    <svg>
+        <polygon points="50,5 50,65 35,65" fill="purple" style="fill:lime; stroke:purple; stroke-width:2" />
+        <line x1="10" x2="100" y1="500" y2="80" style="stroke:blue; stroke-width:initial" />
+    </svg>
+    <script>
+
+        function Red(evt)
+        {
+            var circle = evt.target;
+            circle.setAttributte("style", "fill:red");
+        }
+
+        function Green(evt) {
+            var circle = evt.target;
+            circle.setAttributte("style", "fill:red");
+        }
+
+    </script>
+</body>
+
+</html>
