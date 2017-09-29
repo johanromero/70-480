@@ -1,5 +1,5 @@
-﻿function initApp() {
-
+function initApp() {
+    //defining variables
     var myApp = myApp || {};
     myApp.radio = 40;
     myApp.firstime = true;
@@ -8,18 +8,18 @@
     myApp.height = 0; 
     
 
-    myApp.createCircle = function (xIni, yIni, signX, signY) {
+	  myApp.createCircle = function (xIni, yIni, signX, signY) {
 
-        var circle = { x: xIni, y: yIni, signX: signX, signY: signY };
-        return circle;
+	        var circle = { x: xIni, y: yIni, signX: signX, signY: signY };
+	        return circle;
 
-    };
+	    };
+
 
     myApp.icircle = myApp.createCircle(0, 0, 1, 1);
-
+	//using callbacks to clear the container and also to darw circles
     myApp.setInterval = function (clearCallback, callback) { setInterval(function () { myApp.drawCircle(clearCallback, callback); }, 10); };
-
-
+	
     myApp.drawCircle = function (clearCallback, callback) {
 
         clearCallback();
