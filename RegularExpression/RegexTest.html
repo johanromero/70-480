@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Regex Test by using form</title>
+</head>
+<body>
+	<form>
+		<h1>
+			Coder Satisfaction Poll: 
+		</h1>
+		<br />
+		<label>
+			First Name
+		</label>
+		
+		<input type="text" placeholder="Type your name"/>
+		<br />
+
+		<label>
+			Surname
+		</label>
+		<input type="text" />
+		<br />
+		<label>
+			Your favorite code
+		</label>
+		<input type="text"/>
+		<br />
+		<label>
+			Age coding:
+		</label>
+		<input type="text"/>
+		<br />
+		<label>
+			What patterns do you prefer: 
+		</label>
+		<fieldset>
+			<input type="checkbox" value="singleton" />Singleton
+			<input type="checkbox" value="observer"/>Observer
+			<input type="checkbox" value="abstractf" />Abstract Factory
+			<input type="checkbox" value="MVC"/>MVC
+		</fieldset>
+		<br />
+		<label>
+			Game you love:			
+		</label>
+		<div>
+			<fieldset>
+				<input type="radio" checked /> Legend of Celda
+				<input type="radio" /> Dungeons and dragons
+				<input type="radio" /> Silent Hill 1
+				<input type="radio" /> Mario 
+			</fieldset>
+			
+		</div>
+		<label>
+			Text your bio:
+		</label>
+		<textarea spellcheck="true" placeholder="Let us know your background!..">
+		
+		</textarea>
+		<br />
+		Email:
+		<input type="email" />
+		<br />
+		How would you assess your skills?
+		<input type="range" min="1" max="10" value="3" />
+		<br />
+		<input type="submit" />
+		<input type="reset" />
+		<input type="button" value="cancel" />
+
+	</form>
+
+	<script type="text/javascript">
+		
+		function checkString()
+		{
+			var s = $(regSgring).val();
+            // 3AAA-AAA-EEE-332
+            var regExpr = /d[A-Z][A-Z][A-Z]\-[A-Z][A-Z][A-Z]\-/d/d/d;
+            try
+            {
+                if (regExpr.test(s))
+                    alert("Valid pattern");
+                else
+                    alert("Mismatch");
+            } catch (e)
+            {
+                alert(e.message);
+            }
+		
+		}
+
+	</script>
+</body>
+</html>	

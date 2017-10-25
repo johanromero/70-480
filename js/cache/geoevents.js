@@ -21,6 +21,7 @@
     var btnClear = document.getElementById('btnClear');
     btnClear.onclick = function () {
         clearStorage();
+        showCoordinates();
     };
 
     var showPos = document.getElementById('showPos');
@@ -63,11 +64,6 @@
         }
         ctx.stroke();
            
-    }
-
-    function loadImg()
-    {      
-       
     }
  
 
