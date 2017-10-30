@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Regex Test by using form</title>
+</head>
+<body>
+    <style>
+        p {
+            font-size:x-large;
+        }
+
+    </style>
+    <p>
+        Please move slider to narrow fonts.
+    </p>
+    <p>
+        Do you notice how its expanded?
+    </p>
+    <p>
+        Do you like this code?
+    </p>
+    <input type="range" min="0" max="3" id="rangebtn" />
+
+    <script>
+        document.onload = init();
+        function init()
+        {
+            var fontSizes = ['x-small', 'xx-small', 'x-large',  'xx-large'];
+            var rangeBtn = document.getElementById('rangebtn');
+            rangeBtn.addEventListener('change', function () {
+                var allParagraphs = document.querySelectorAll('p');
+                for (var i = 0; i < allParagraphs.length; i++)
+                {
+                    allParagraphs[i].style.fontSize = fontSizes[this.value];
+                }
+            }); 
+
+        }
+       
+    </script>
+</body>
+
+
+</html>

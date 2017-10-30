@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Text Alignment</title>
+</head>
+<body>
+    <div>
+
+
+        <p>
+            Lorem Ipsum
+
+        </p>
+        <p>
+            Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
+        </p>
+        <p>
+            There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet accumsan sapien, in fringilla ipsum. Phasellus sodales nibh magna. Fusce tincidunt feugiat ligula at dapibus. Aliquam ut felis et neque consequat cursus. Quisque sed pellentesque augue. Proin consequat efficitur gravida. Maecenas interdum convallis sem vitae elementum. Quisque id diam metus. Aliquam lacinia lacus ante, nec viverra libero vulputate vel. Suspendisse rhoncus ex nec gravida pellentesque. Quisque ullamcorper id neque non tincidunt. Nunc ac lacinia velit, sit amet commodo nunc. Mauris nibh nibh, volutpat nec neque in, dignissim porttitor nisi. Pellentesque mi ipsum, rhoncus non mauris hendrerit, sagittis tincidunt odio. Sed leo nisi, iaculis et est pellentesque, mattis commodo erat. Suspendisse quis urna tortor.
+
+        </p>
+        <div>
+            Text Alignment
+            <input type="range" min="0" max="3" id="Alignment" />
+            Text Spacing
+            <input type="range" min="0" max="3" id="Spacing" />
+            Hyphenation
+            <input type="range" min="0" max="3" id="Hyphenation" />
+
+        </div>
+    </div>
+    <script>
+        document.onload = init();
+        function init()
+        {
+            align();
+            spacing();
+            hyphen();
+            function align()
+            {
+
+                var textAlignment = ['right', 'center', 'justify', 'left'];
+                var rangeBtn = document.getElementById('Alignment');
+                rangeBtn.addEventListener('change', function () {
+                    var allParagraphs = document.querySelectorAll('p');
+                    for (var i = 0; i < allParagraphs.length; i++) {
+                        allParagraphs[i].style.textAlign = textAlignment[this.value];
+                    }
+                }); 
+            }
+
+            function spacing()
+            {
+                var textSpacing = ['8px', '15px', '20px', '30px'];
+                var rangeBtn = document.getElementById('Spacing');
+                rangeBtn.addEventListener('change', function () {
+                    var allParagraphs = document.querySelectorAll('p');
+                    for (var i = 0; i < allParagraphs.length; i++) {
+                        allParagraphs[i].style.wordSpacing = textSpacing[this.value];
+                        allParagraphs[i].style.letterSpacing = textSpacing[this.value];
+                    }
+                }); 
+
+            }
+
+            function hyphen()
+            {
+                var hyphenValues = ['none', 'Auto', 'Manual'];
+                var rangeBtn = document.getElementById('Hyphenation');
+                rangeBtn.addEventListener('change', function () {
+                    var allParagraphs = document.querySelectorAll('p');
+                    for (var i = 0; i < allParagraphs.length; i++) {
+                        allParagraphs[i].style.wordSpacing = hyphenValues[this.value];
+                        allParagraphs[i].style.letterSpacing = hyphenValues[this.value];
+                    }
+                }); 
+
+
+            }
+            
+
+        }
+       
+    </script>
+</body>
+
+
+</html>

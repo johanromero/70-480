@@ -67,9 +67,10 @@
 		How would you assess your skills?
 		<input type="range" min="1" max="10" value="3" />
 		<br />
+        <input type="text" id="regSgring" />
 		<input type="submit" />
 		<input type="reset" />
-		<input type="button" value="cancel" />
+		<input type="button" value="checkbtn" onclick="checkString();" />
 
 	</form>
 
@@ -79,7 +80,7 @@
 		{
 			var s = $(regSgring).val();
             // 3AAA-AAA-EEE-332
-            var regExpr = /d[A-Z][A-Z][A-Z]\-[A-Z][A-Z][A-Z]\-/d/d/d;
+            var regExpr = ^/d[A - Z][A - Z][A - Z][A - Z][A - Z][A - Z] / d / d /d $ ;
             try
             {
                 if (regExpr.test(s))

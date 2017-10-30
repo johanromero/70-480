@@ -1,10 +1,15 @@
 {
   "ExpandedNodes": [
     "",
-    "\\js",
+    "\\Canvas\\BallsGame",
+    "\\css",
+    "\\CSSSamples",
     "\\jstopics",
-    "\\js\\WebSockets"
+    "\\js\\svg",
+    "\\RegularExpression",
+    "\\SVG",
+    "\\SVG\\BallsGame"
   ],
-  "SelectedNode": "\\js\\WebSockets\\WebSocketSample.html",
+  "SelectedNode": "\\RegularExpression",
   "PreviewInSolutionExplorer": false
 }
