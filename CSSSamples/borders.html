@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>BORDERS</title>
+</head>
+<body>
+    
+    <div id="border">
+        <p id="borderMargin">
+            This is an example of using all main borders.
+        </p>
+
+    </div>
+    <br />
+    <textarea id="taborder" >
+         border{
+            border-top:  1px solid black;
+            border-left:  1px solid black;
+            border-right:  1px solid black;
+            border-bottom:  1px solid black;
+            padding:  1px;
+        }
+    </textarea>
+    <br />
+    <button id="0" name="top">top</button>
+    <button id="1" name="left">left</button>
+    <button id="2" name="right">right</button>
+    <button id="3" name="bottom">bottom</button>
+    <button id="4" name="padding">padding</button>
+    <style>
+        border {
+            border-top: 1px solid black;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+            padding: 1px;
+            width: 300px;
+            height: 300px;
+            border-color: #4CAF50;
+        }
+        textarea {
+            width:500px;
+            height:200px;
+        }
+        button {
+            background-color: #4CAF50;
+            color:white;
+        }
+
+
+    </style>
+    <script>
+        document.onload = init();
+        function init()
+        {
+            var borderSize = [1, 1, 1, 1, 1];
+            var buttons = document.querySelectorAll("button");
+          
+            var fixedStyle = " solid black";
+
+            for (var i = 0; i < buttons.length; i++) {
+                //addin events to buttons
+                buttons[i].addEventListener('click', function () {
+                    var j = Number(this.id);
+                    borderSize[j]++;
+                    updateTextArea(j);
+                    updateStyle(borderSize[j], this.name);
+                });
+
+            };  
+
+            function updateTextArea(j)
+            {
+                      
+                var taborder = document.getElementById('taborder');
+                //text area value
+                var taValue = taborder.value.toString();
+                var regex = /px/gi, indexes = [];
+                while ((result = regex.exec(taValue))) {
+                    indexes.push(result.index);
+                }              
+                var embededtxt = " " + borderSize[j] + "px";
+                var fvalue = taValue.substr(0, indexes[j]-(borderSize[j]>9?3:2)) +  embededtxt + taValue.substring(indexes[j] + 2, taValue.length);
+                taborder.value = fvalue;
+
+            }
+
+            function updateStyle(k, btn)
+            {
+                var p = document.querySelector('p');
+                switch (btn)
+                {
+                    case 'top':
+                        p.style.borderTop = k + "px" + fixedStyle;
+                    case 'left':
+                        p.style.borderLeft = k + "px" + fixedStyle;
+                    case 'right':
+                        p.style.borderRight = k + "px" + fixedStyle;
+                    case 'bottom':
+                        p.style.borderBottom = k + "px" + fixedStyle;
+                    case 'padding':
+                        p.style.padding = k + "px";
+                }
+
+
+            }
+            
+        }
+    </script>
+</body>
+</html>
